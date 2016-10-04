@@ -7,6 +7,14 @@ if ! hash vim 2>/dev/null ; then
     exit 1
 fi
 
+if ! hash gvim 2>/dev/null ; then
+    echo "Info: Not installed GVIM"
+fi
+
+if ! hash ctags 2>/dev/null ; then
+  echo 'Info: Not installed CTAGS'
+fi
+
 
 if [ ! -e ~/.vimrc ]; then ln -s $(pwd)/vimrc ~/.vimrc; fi
 if [ ! -d ~/.vim ]; then ln -s $(pwd)/vim ~/.vim; fi
@@ -34,10 +42,6 @@ cp ./vim/fonts/* $font_dir
 # Reset font cache on Linux
 if [[ -n $(which fc-cache) ]]; then
   fc-cache -f "$font_dir"
-fi
-
-if [[ ! -n $(which ctags) ]]; then
-  echo 'info: ctags not installed'
 fi
 
 

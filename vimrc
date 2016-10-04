@@ -8,6 +8,7 @@ let g:snips_author = 'Leandro Vital <leandro.vital@yahoo.com.br>'
 set nocompatible            " Disable vi compatibility
 syntax on                   " Enable themas
 filetype on
+set guioptions-=m           " Remove menu bar
 set guioptions-=T           " Remove toolbar
 
 " set the runtime path to include Vundle and initialize
