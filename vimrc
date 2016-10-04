@@ -30,10 +30,6 @@ endif
 let g:auto_save = 0
 
 " --- NERDTree ----
-let g:nerdtree_tabs_open_on_gui_startup=1
-let g:nerdtree_tabs_open_on_console_startup=1
-let g:nerdtree_tabs_focus_on_files=1
-let g:nerdtree_tabs_autofind=1
 
 let NERDTreeIgnore=['.DS_Store']
 let NERDTreeShowBookmarks=0         "show bookmarks on startup
@@ -43,8 +39,12 @@ let NERDTreeMinimalUI=1
 let NERDTreeWinSize=32
 let NERDTreeAutoDeleteBuffer=1
 
-nmap <silent> <C-t> :NERDTreeTabsToggle<CR>
+nmap <silent> <C-t> :NERDTreeToggle<CR>
 nmap <silent> <C-f> :NERDTreeFocus<CR>
+
+" NERDTree open automatically
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 let NERDTreeMapActivateNode='<space>'
 
