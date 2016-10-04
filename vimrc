@@ -285,6 +285,14 @@ vmap <C-Down> ]egv
 noremap <C-S-Up> YP
 noremap <C-S-Down> YP
 
+" activate visual mode in normal mode
+nmap <S-Up> V
+nmap <S-Down> V
+
+" these are mapped in visual mode
+vmap <S-Up> k
+vmap <S-Down> j
+
 " Move between splits (windows)
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
