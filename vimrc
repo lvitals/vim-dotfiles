@@ -22,6 +22,12 @@ if filereadable(expand("~/.vim/vundles.vim"))
   source ~/.vim/vundles.vim
 endif
 
+" set autocomplete
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
+" PHP autocomplete
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 " -----------------------------------------------------------------------------
 " PLUGINS
@@ -306,6 +312,9 @@ nmap <silent> <C-g> :TagbarToggle<CR>
 " Buffers Navigator
 nmap <silent> <Tab> :bnext<CR>
 nmap <silent> <S-Tab> :bprevious<CR>
+
+" Remap code completion to Ctrl+Space
+inoremap <C-Space> <C-x><C-o>
 
 if has('nvim')
     let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
