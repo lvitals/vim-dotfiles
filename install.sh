@@ -7,16 +7,6 @@ if ! hash vim 2>/dev/null ; then
     exit 1
 fi
 
-#wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
-#wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
-
-#if [ ! -d ~/.fonts/ ]; then mkdir -p ~/.fonts/; fi
-#if [ ! -d ~/.config/fontconfig/conf.d/ ]; then mkdir -p ~/.config/fontconfig/conf.d/; fi
-
-#mv PowerlineSymbols.otf ~/.fonts/
-#mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
-
-#fc-cache -vf ~/.fonts/
 
 if [ ! -e ~/.vimrc ]; then ln -s $(pwd)/vimrc ~/.vimrc; fi
 if [ ! -d ~/.vim ]; then ln -s $(pwd)/vim ~/.vim; fi
@@ -34,3 +24,20 @@ if hash nvim 2>/dev/null ; then
     ln -s -f ~/.vimrc $XDG_CONFIG_HOME/nvim/init.vim
 
 fi
+
+# Install fonts
+font_dir="$HOME/.local/share/fonts"
+if [ ! -d "$font_dir" ]; then mkdir -p "$font_dir"; fi
+
+cp ./vim/fonts/* $font_dir
+
+# Reset font cache on Linux
+if [[ -n $(which fc-cache) ]]; then
+  fc-cache -f "$font_dir"
+fi
+
+if [[ ! -n $(which ctags) ]]; then
+  echo 'info: ctags not installed'
+fi
+
+
