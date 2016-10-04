@@ -11,6 +11,13 @@ filetype on
 set guioptions-=m           " Remove menu bar
 set guioptions-=T           " Remove toolbar
 
+" set autocomplete
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
+" PHP autocomplete
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
@@ -21,13 +28,6 @@ call vundle#rc()
 if filereadable(expand("~/.vim/vundles.vim"))
   source ~/.vim/vundles.vim
 endif
-
-" set autocomplete
-filetype plugin on
-set omnifunc=syntaxcomplete#Complete
-
-" PHP autocomplete
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 " -----------------------------------------------------------------------------
 " PLUGINS
@@ -114,7 +114,7 @@ let g:airline_theme='hybrid'
 let g:airline_powerline_fonts=1
 let g:airline_detect_paste=1
 let g:airline_detect_spell=1
-"let g:airline_section_a = '%{getcwd()}'
+let g:airline_section_a = '%{getcwd()}'
 let g:airline#extensions#tagbar#enabled = 1
 
 if !exists('g:airline_symbols')
