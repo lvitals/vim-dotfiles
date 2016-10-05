@@ -31,6 +31,9 @@ Bundle 'tomtom/tcomment_vim'
 " search Ctrl-Shift-F
 Bundle 'dyng/ctrlsf.vim'
 
+" jump files Ctrl-P
+Bundle 'kien/ctrlp.vim'
+
 " css
 Bundle 'ap/vim-css-color'
 " js
