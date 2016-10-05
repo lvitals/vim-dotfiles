@@ -323,9 +323,9 @@ noremap <C-l> <C-w>l
 " tagbar
 nmap <silent> <C-g> :TagbarToggle<CR>
 
-" Buffers Navigator
-nmap <silent> <Tab> :bnext<CR>
-nmap <silent> <S-Tab> :bprevious<CR>
+" Tab buffers navigation like Firefox.
+nmap <silent> <C-Tab> :bnext<CR>
+nmap <silent> <C-S-Tab> :bprevious<CR>
 
 " Remap code completion to Ctrl+Space
 inoremap <C-Space> <C-x><C-o>
