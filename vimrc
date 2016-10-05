@@ -337,6 +337,11 @@ if has('nvim')
     tnoremap <Esc> <C-\><C-n>
 endif
 
+" Use CTRL-S for saving, also in Insert mode
+noremap <C-S> :update<CR>
+vnoremap <C-S> <C-C>:update<CR>
+inoremap <C-S> <C-O>:update<CR>
+
 
 " -----------------------------------------------------------------------------
 "  INDENTATION AND TEXT-WRAP
