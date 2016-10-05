@@ -45,8 +45,8 @@ function! SearchAllFiles()
   :execute "CtrlSFQuickfix " . "'".params."'"
 endfunction
 
-" ctrlsh.vim enable ack depends
-let g:ctrlsf_ackprg='ack'
+" ctrlsh.vim enable ack/ag depends
+let g:ctrlsf_ackprg='ag'
 
 " --- AutoSave ---
 let g:auto_save = 0

@@ -15,8 +15,14 @@ if ! hash ctags 2>/dev/null ; then
   echo 'Info: Not installed CTAGS'
 fi
 
-if ! hash ack 2>/dev/null ; then
-  echo 'Info: Not installed ACK'
+if ! hash ag 2>/dev/null ; then
+  echo 'Info: Not installed AG - The Silver Searcher'
+  echo 'OS X: brew install the_silver_searcher or port install the_silver_searcher'
+  echo 'FreeBSD: pkg install the_silver_searcher'
+  echo 'Linux: 
+             Debian/Ubuntu: apt-get install silversearcher-ag 
+             Fedora/CentOS: yum install the_silver_searcher 
+             Arch: pacman -S the_silver_searcher'
 fi
 
 
