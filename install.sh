@@ -15,6 +15,10 @@ if ! hash ctags 2>/dev/null ; then
   echo 'Info: Not installed CTAGS'
 fi
 
+if ! hash ack 2>/dev/null ; then
+  echo 'Info: Not installed ACK'
+fi
+
 
 if [ ! -e ~/.vimrc ]; then ln -s $(pwd)/vimrc ~/.vimrc; fi
 if [ ! -d ~/.vim ]; then ln -s $(pwd)/vim ~/.vim; fi

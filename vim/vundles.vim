@@ -25,6 +25,12 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'joonty/vdebug'
 Bundle 'tpope/vim-unimpaired'
 
+" extensible & universal comment
+Bundle 'tomtom/tcomment_vim'
+
+" search Ctrl-Shift-F
+Bundle 'dyng/ctrlsf.vim'
+
 " css
 Bundle 'ap/vim-css-color'
 " js

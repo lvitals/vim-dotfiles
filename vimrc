@@ -33,6 +33,21 @@ endif
 " PLUGINS
 " -----------------------------------------------------------------------------
 
+" ctrlsh.vim search paramters
+nmap <silent> <C-S-f> :call SearchAllFiles()<CR>
+
+function! SearchAllFiles()
+  let curline = getline('.')
+  call inputsave()
+  let params = input('search: ')
+  if(empty(params)) | return | endif 
+  call inputrestore()
+  :execute "CtrlSFQuickfix " . "'".params."'"
+endfunction
+
+" ctrlsh.vim enable ack depends
+let g:ctrlsf_ackprg='ack'
+
 " --- AutoSave ---
 let g:auto_save = 0
 
@@ -47,7 +62,6 @@ let NERDTreeWinSize=32
 let NERDTreeAutoDeleteBuffer=1
 
 nmap <silent> <C-t> :NERDTreeToggle<CR>
-nmap <silent> <C-f> :NERDTreeFocus<CR>
 
 " NERDTree open automatically
 autocmd StdinReadPre * let s:std_in=1
@@ -322,6 +336,7 @@ if has('nvim')
     nmap <BS> <C-W>h
     tnoremap <Esc> <C-\><C-n>
 endif
+
 
 " -----------------------------------------------------------------------------
 "  INDENTATION AND TEXT-WRAP
