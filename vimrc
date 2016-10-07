@@ -54,13 +54,24 @@ endif
 " ctrlsh.vim search paramters
 nmap <silent> <C-S-f> :call SearchAllFiles()<CR>
 
+let g:ctrlsf_position = "right"
+
+let g:ctrlsf_mapping = {
+    \ "next": "n",
+    \ "prev": "N",
+    \ }
+
+let g:ctrlsf_regex_pattern = 1
+
+let g:ctrlsf_auto_close = 0
+
 function! SearchAllFiles()
   let curline = getline('.')
   call inputsave()
   let params = input('search: ')
   if(empty(params)) | return | endif 
   call inputrestore()
-  :execute "CtrlSFQuickfix " . "'".params."'"
+  :execute "CtrlSF " . "'".params."'"
 endfunction
 
 " ctrlsh.vim enable ack/ag depends
