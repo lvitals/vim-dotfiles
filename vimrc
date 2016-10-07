@@ -33,6 +33,24 @@ endif
 " PLUGINS
 " -----------------------------------------------------------------------------
 
+" ctrlp.vim jumper files
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+
+" ctrlp.vim exclude files
+if has("unix")
+    set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+    let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+elseif has("win32")
+    set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+    let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+    \ 'file': '\v\.(exe|so|dll)$',
+    \ 'link': 'some_bad_symbolic_links',
+    \ }
+endif
+
 " ctrlsh.vim search paramters
 nmap <silent> <C-S-f> :call SearchAllFiles()<CR>
 
