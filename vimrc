@@ -83,14 +83,19 @@ let NERDTreeShowLineNumbers=0
 let NERDTreeMinimalUI=1
 let NERDTreeWinSize=32
 let NERDTreeAutoDeleteBuffer=1
+let NERDTreeMapActivateNode='<space>'
 
 nmap <silent> <C-t> :NERDTreeToggle<CR>
 
 " NERDTree open automatically
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-let NERDTreeMapActivateNode='<space>'
+" --- vim-nerdtree-tabs ---
+let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_focus_on_files=1
+let g:nerdtree_tabs_autofind=1
+let g:nerdtree_tabs_autoclose=0
+let g:nerdtree_tabs_synchronize_focus = 1
 
 " --- NERDCommenter ---
 let NERDSpaceDelims=1               " space around delimiters
@@ -171,6 +176,7 @@ let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
+let g:airline_symbols.space = "\ua0"
 
 " display open buffers in tabline
 let g:airline#extensions#tabline#enabled = 1

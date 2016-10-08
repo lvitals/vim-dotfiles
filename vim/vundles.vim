@@ -24,6 +24,7 @@ Bundle 'wakatime/vim-wakatime'
 Bundle 'tpope/vim-fugitive'
 Bundle 'joonty/vdebug'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'jistr/vim-nerdtree-tabs'
 
 " extensible & universal comment
 Bundle 'tomtom/tcomment_vim'
