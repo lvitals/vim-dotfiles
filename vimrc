@@ -1,5 +1,3 @@
-" --- snipmate ---
-let g:snips_author = 'Leandro Vital <leandro.vital@yahoo.com.br>'
 
 " -----------------------------------------------------------------------------
 " BEHAVIOR
@@ -10,13 +8,6 @@ syntax on                   " Enable themas
 filetype on
 set guioptions-=m           " Remove menu bar
 set guioptions-=T           " Remove toolbar
-
-" set autocomplete
-filetype plugin on
-set omnifunc=syntaxcomplete#Complete
-
-" PHP autocomplete
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -32,6 +23,9 @@ endif
 " -----------------------------------------------------------------------------
 " PLUGINS
 " -----------------------------------------------------------------------------
+
+" --- snipmate ---
+let g:snips_author = 'Leandro Vital <leandro.vital@yahoo.com.br>'
 
 " ctrlp.vim jumper files
 let g:ctrlp_map = '<c-p>'
@@ -227,6 +221,13 @@ set noeol
 "Enable coffescript
 au BufNewFile,BufRead *.coffee set filetype=coffee
 
+" set autocomplete
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
+" PHP autocomplete
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+
 " File types
 au BufNewFile,BufRead *.ctp set filetype=php shiftwidth=4 softtabstop=4 tabstop=4
 au BufNewFile,BufRead *.phpt set filetype=php shiftwidth=4 softtabstop=4 tabstop=4
@@ -375,11 +376,11 @@ vnoremap <C-C> "+y
 vnoremap <C-Insert> "+y
 
 " CTRL-V and SHIFT-Insert are Paste
-map <C-V>		"+gP
-map <S-Insert>		"+gP
+map <C-V> "+gP
+map <S-Insert> "+gP
 
-cmap <C-V>		<C-R>+
-cmap <S-Insert>		<C-R>+
+cmap <C-V> <C-R>+
+cmap <S-Insert> <C-R>+
 
 " Pasting blockwise and linewise selections is not possible in Insert and
 " Visual mode without the +virtualedit feature.  They are pasted as if they
@@ -390,11 +391,11 @@ cmap <S-Insert>		<C-R>+
 exe 'inoremap <script> <C-V> <C-G>u' . paste#paste_cmd['i']
 exe 'vnoremap <script> <C-V> ' . paste#paste_cmd['v']
 
-imap <S-Insert>		<C-V>
-vmap <S-Insert>		<C-V>
+imap <S-Insert> <C-V>
+vmap <S-Insert> <C-V>
 
 " Use CTRL-Q to do what CTRL-V used to do
-noremap <C-Q>	<C-V>
+noremap <C-Q> <C-V>
 
 " For CTRL-V to work autoselect must be off.
 " On Unix we have two selections, autoselect can be used.
